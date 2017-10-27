@@ -4,7 +4,7 @@ source ./WebSockMan.ini     # 설정파일 로드
 
 while(true)
 do
-
+_____DEBUG_____ START
     #요청 시작시간
     start_time=`date "+%s"`
     #서버 요청
@@ -13,6 +13,8 @@ do
     end_time=`date "+%s"`
 
     interval=`echo "$end_time - $start_time" | bc`
+
+_____DEBUG_____ $interval
     #타임아웃 제한시간 초과
     if [ $interval -ge $TIMEOUT_SECOND ]
     then
@@ -27,5 +29,5 @@ do
     fi
 
     sleep $CHK_INTERVAL
-
+_____DEBUG_____ $CHK_INTERVAL
 done
