@@ -5,11 +5,9 @@ source ./WebSockMan.ini     # 설정파일 로드
 while(true)
 do
 
+_____DEBUG_____ "=================================================="
 _____DEBUG_____ "LOOP START"
-_____DEBUG_____ "SERVER_URL : "${SERVER_URL}
-_____DEBUG_____ "SERVER_PORT : "${SERVER_PORT}
-_____DEBUG_____ "TIMEOUT_SECOND : "${TIMEOUT_SECOND}
-_____DEBUG_____ "CHK_INTERVAL : "${CHK_INTERVAL}
+_____DEBUG_____ "=================================================="
 
     #요청 시작시간
     start_time=`date "+%s"`
@@ -47,5 +45,8 @@ _____DEBUG_____ "SERVER DOWN"
     sleep $CHK_INTERVAL
 
 _____DEBUG_____ "LOOP END"
+_____DEBUG_____ "=================================================="
+_____DEBUG_____ ""
+_____DEBUG_____ ""
 
 done
