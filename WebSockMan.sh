@@ -12,7 +12,6 @@ do
 
     #요청 시작시간
     start_time=`date "+%s"`
-    _____DEBUG_____ "[STIME] ${start_time}"
 
     #서버 요청
     res=`curl -s --max-time $TIMEOUT_SECOND "$SERVER_URL:$SERVER_PORT"`
@@ -20,7 +19,6 @@ do
 
     #요청 종료시간
     end_time=`date "+%s"`
-    _____DEBUG_____ "[ETIME] ${end_time}"
 
     interval=`echo "$end_time - $start_time" | bc`
     _____DEBUG_____ "[INTERVAL] ${interval}"
