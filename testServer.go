@@ -18,6 +18,6 @@ type testHandler struct {
  
 func (h *testHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	str := "Server Running"
-	time.Sleep(5 * time.Second)
+	time.Sleep(3 * time.Second)
 	w.Write([]byte(str))
 }
