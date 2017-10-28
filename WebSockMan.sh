@@ -6,24 +6,24 @@ while(true)
 do
     GET_PID
 
+_____DEBUG_____ `date +%Y/%m/%d %H:%M:%S`
 _____DEBUG_____ "=================================================="
-_____DEBUG_____ "LOOP START"
-_____DEBUG_____ "[PID] "${SERVER_PID}
+_____DEBUG_____ "[PID] ${SERVER_PID}"
 
     #요청 시작시간
     start_time=`date "+%s"`
-_____DEBUG_____ "[START_TIME] "${start_time}
+_____DEBUG_____ "[STIME] ${start_time}"
     #서버 요청
     res=`curl -s --max-time $TIMEOUT_SECOND "$SERVER_URL:$SERVER_PORT"`
 
-_____DEBUG_____ "[RES] "${res}
+_____DEBUG_____ "[RES] ${res}"
 
     #요청 종료시간
     end_time=`date "+%s"`
-_____DEBUG_____ "[END_TIME] "${end_time}
+_____DEBUG_____ "[ETIME] ${end_time}"
 
     interval=`echo "$end_time - $start_time" | bc`
-_____DEBUG_____ "[INTERVAL] "${interval}
+_____DEBUG_____ "[INTERVAL] ${interval}"
 
     #타임아웃 제한시간 초과
     if [ $interval -ge $TIMEOUT_SECOND ]
@@ -47,7 +47,6 @@ _____DEBUG_____ "---------- SERVER DOWN ----------"
     sleep $CHK_INTERVAL
 
 _____DEBUG_____ "=================================================="
-_____DEBUG_____ ""
 _____DEBUG_____ ""
 
 done
