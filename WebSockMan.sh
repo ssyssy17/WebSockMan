@@ -24,17 +24,12 @@ do
     _____DEBUG_____ "[INTERVAL] ${interval}"
 
     #타임아웃 제한시간 초과
-    if [ $interval -ge $TIMEOUT_SECOND ]
-    then
-
+    if [ $interval -ge $TIMEOUT_SECOND ]; then
         _____DEBUG_____ "---------- TIMEOUT ----------"
         ELOG "TIMEOUT!!"
         SERVER_START
-    fi
     #서버 DOWN
-    if [ "$res" == "" ]
-    then
-
+    elif [ "$res" == "" ]; then
         _____DEBUG_____ "---------- SERVER DOWN ----------"
         ELOG "SERVER DOWN!!"
         SERVER_START
